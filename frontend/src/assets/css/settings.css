@@ -1,0 +1,328 @@
+.dashboard__modal-window {
+  background-color: white;
+  border-radius: 12px;
+  top: 325px;
+  left: 250px;
+  border: 1px solid blue;
+  height: 25vh;
+  width: 30vw;
+  display: none;
+  justify-content: left;
+  align-items: center;
+  position: fixed;
+  z-index: 9999;
+}
+
+.dashboard__modal-window--open {
+  display: flex;
+}
+
+.dashboard__modal-config-window {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  justify-content: left;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+}
+
+.dashboard__modal-config-window--open {
+  display: flex;
+}
+
+.dashboard__modal-content{
+  padding: 10px 40px;
+}
+
+.dashboard__btn--logout{
+  background-color: white;
+  color: black;
+  border: 1px solid dodgerblue;
+  border-radius: 12px;
+  padding: 14px 0 14px 50px;
+  width: 250px;
+  transition: 0.5s;
+}
+
+.dashboard__btn--logout .bi{
+    color: black;
+    margin: 0 -22px 0 -30px;
+    transition: 0.5s;
+}
+
+.dashboard__btn--logout:hover{
+  background-color:dodgerblue;
+  border: 1px solid dodgerblue;
+  color: white;
+  border-radius: 12px;
+  width: 250px;
+}
+
+.dashboard__btn--logout:hover .bi-door-open{
+  color: white;
+}
+
+.dashboard__modal-window--open ~ .dashboard__sidebar,
+.dashboard__modal-config-window--open ~ .dashboard__sidebar {
+  width: 200px;
+}
+
+.dashboard__modal-window--open ~ .dashboard__menu-item--active,
+.dashboard__modal-config-window--open ~ .dashboard__menu-item--active {
+  background-color: dodgerblue;
+}
+
+.dashboard__modal-title{
+    color: dodgerblue;
+    font-size: 28px;
+    margin-top: -10px;
+}
+
+.dashboard__modal {
+  background-color: white;
+  border: 2px solid dodgerblue;
+  border-radius: 12px;
+  padding: 20px;
+  min-height: 200px;
+  min-width: 350px;
+  width: 20vw;
+  position: absolute;
+  margin-left: 75px;
+  box-shadow: -6px 0 10px -2px rgba(0, 0, 0, 0.3), 6px 0 10px -2px rgba(0, 0, 0, 0.3),
+    0 -6px 10px -2px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard__modal-btn:hover,
+.dashboard__modal-btn:hover .bi,
+.dashboard__modal-btn:hover .dashboard__modal-btn-text {
+    color: white;
+}
+
+.dashboard__modal-titles {
+  color: #2b95ff;
+  margin-bottom: 18px;
+  font-weight: 645;
+}
+
+.dashboard__modal-config {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 100vh;
+  max-width: calc(100% - 280px);
+  margin-left: 280px;
+}
+
+.dashboard__modal-title {
+  color: rgb(28, 141, 255);
+  margin-bottom: 16px;
+  text-align: left;
+  position: relative;
+  padding: 5px 5px 0 5px;
+}
+
+.dashboard__modal-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 250px;
+  background-color: dodgerblue;
+  border-radius: 0.5px;
+}
+
+
+.dashboard__modal-option-title{
+  color: rgb(28, 141, 255);
+  font-size: 28px;
+  text-align: left;
+  position: relative;
+  padding: 0px 5px 0 5px;
+
+}
+
+.dashboard__modal-option-title::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 150px;
+  background-color: dodgerblue;
+  border-radius: 0.5px;
+}
+
+
+.dashboard__modal-subtitle {
+  color: dodgerblue;
+  margin-top: 30px;
+  margin-bottom: 2px;
+  text-align: left;
+}
+
+.dashboard__modal-subtitle-text {
+  text-align: left;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.dashboard__modal-subtitle-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 150%;
+  background-color: #a7adb3;
+  border-radius: 0.5px;
+}
+
+.dashboard__modal-nav {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: #6c757d;
+  gap: 30px;
+  font-size: 16px;
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.dashboard__modal-config-section {
+  cursor: pointer;
+  position: relative;
+  margin-bottom: -50px;
+  color: #6c757d;
+}
+
+.dashboard__modal-config-section--active {
+  color: dodgerblue;
+  font-weight: 600;
+  border-bottom: 3px solid dodgerblue;
+}
+
+#dashboard__gear-modal {
+  align-items: center;
+  max-width: 150px;
+}
+
+.dashboard__modal-place-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard__modal-options-container {
+  display: flex;
+  justify-content: left;
+  padding-top: 20px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard__modal-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard__modal-btn {
+  background: none;
+  border: 1px solid dodgerblue;
+  border-radius: 13px;
+  padding: 10px 25px;
+  color: dodgerblue;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dashboard__modal-btn:hover {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.dashboard__modal-option {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 14px;
+  gap: 30px;
+  align-items: center;
+  font-weight: 500;
+}
+
+.dashboard__modal-option-text {
+  margin-left: 20px;
+  flex: 1;
+}
+
+.dashboard__modal-close-btn {
+  border: none;
+  background: none;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 25px;
+  font-weight: 900;
+  color: dodgerblue;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.dashboard__modal-btn--logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+
+
+.dashboard__modal-btn--profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: transparent;
+  border: none;
+  color: #17a2b8;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.dashboard__modal-btn--profile:hover {
+  color: #0c5460;
+}
+
+.dashboard__modal-btn{
+    border: 1px solid dodgerblue;
+    width: 284px;
+}
+
+.dashboard__container-btn{
+    margin-top: -20px;
+}
+
+.dashboard__modal-btn:first-of-type{
+    margin-top: 30px;
+    margin-bottom: -10px;
+}
+
+.dashboard__btn--close{
+  color: dodgerblue;
+  font-size: 22px;
+  font-weight: 600;
+  position: absolute;
+  margin: -108px 300px ;
+}

@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.register {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.register__container {
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.register__left {
+    background-color: white;
+    padding: 3rem 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.register__right {
+    flex: 1;
+    background-color: rgb(27, 119, 211);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.register__right .bi{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 350px;
+    color: white;
+}
+
+.login__form {
+    width: 100%;
+    height: auto;
+}
+
+.form__title {
+    margin: 1px 0 5px 0;
+    font-size: 36px;
+    border-bottom: 3px solid black;
+    width: 45%;
+    font-weight: 500;
+}
+
+.form__content {
+    position: relative;
+    margin: 16px 0;
+}
+
+.register__link-container,
+.register__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.register__link {
+    color: black;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.form__input {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 5px 10px 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form__content .bi,
+.bi {
+    color: black;
+}
+
+.form__content .bi {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.form__link {
+    color: black;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.form__button {
+    background-color: rgb(27, 119, 211);
+    border: 1px solid rgb(27, 119, 211);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px 50px;
+    margin-top: 16px;
+    transition: 0.5s;
+    width: 280px;
+}
+
+.form__button:hover {
+    background-color: white;
+    border: 1px solid rgb(27, 119, 211);
+    color: rgb(27, 119, 211);
+}
+
+.bi-arrow-left-circle {
+    font-size: 36px;
+}
+
+.form__or {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.form__media {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.form__social-link:not(:last-child) {
+    padding-right: 20px;
+}
+
+.erro-mensagem {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.cadastro-imagem {
+    height: 400px;
+    width: 400px;
+    border-radius: 20px;
+    object-fit: cover;
+}

@@ -1,0 +1,451 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: white;
+}
+
+.menu-lateral {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    width: 60px;
+    position: fixed;
+    overflow: hidden;
+    box-shadow: 1px 0 0 black; 
+    transition: 0.5s;
+    z-index: 1000; 
+}
+
+.menu-lateral:hover {
+    width: 280px;
+}
+
+.item-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 2px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
+
+.icone-menu {
+    width: 60px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.texto-menu {
+    position: absolute;
+    left: 63px;
+    opacity: 0;
+    transition: opacity 0.3s, left 0.3s;
+    white-space: nowrap;
+    font-size: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-lateral:hover .texto-menu {
+    margin-left: 0;
+    opacity: 1;
+}
+
+.item-menu:hover,
+.item-menu.ativo {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.texto-menu, a {
+    color: inherit;
+    font-size: 16px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.sair-conta {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    transition: 0.5s; 
+    width: 220px;
+    border-radius: 10px;
+}
+
+.sair-conta:hover,
+.sair-conta.red-background {
+    background-color: rgb(27, 119, 211);
+    height: 40px;
+    width: 220px;
+}
+
+.sair-conta-texto {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+.bi {
+    color: black;
+    font-size: 30px;
+    margin-left: 12px;
+}
+
+.bi-three-dots{
+    margin-left: -12px;
+}
+
+.item-menu:hover .bi{
+    color: white;
+}
+
+.btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.janela-modal {
+    top: 50px;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: left;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+}
+
+.janela-modal.abrir {
+    display: flex;
+}
+
+/* Uso do seletor geral para não repetir */
+.janela-modal.abrir ~ .menu-lateral,
+.janela-modal-config.abrir ~ .menu-lateral {
+    width: 200px;
+}
+
+.janela-modal.abrir ~ .item-menu.ativo,
+.janela-modal-config.abrir ~ .item-menu.ativo {
+    background-color: dodgerblue;
+}
+
+/* Conteúdo do modal */
+.modal {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 200px;
+    min-width: 450px;
+    width: 20vw;
+    position: absolute;
+    margin-left: 75px;
+    box-shadow: 
+        -6px 0 10px -2px rgba(0, 0, 0, 0.3),
+         6px 0 10px -2px rgba(0, 0, 0, 0.3),
+         0 -6px 10px -2px rgba(0, 0, 0, 0.3);
+}
+
+.modal-opcoes {
+    background-color: white;
+    margin-top: 20px;
+}
+
+.modal-opcoes .modal-btn.config{
+    width: 410px;
+}
+
+.modal-btn {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 5px;
+    padding: 10px 15px;
+    height: 45px;
+    border-radius: 12px;
+    transition: background-color 0.3s;
+    
+}
+
+/* Unificação para botões sair e config */
+.modal-btn.sair,
+.modal-btn.config {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    width: 410px;
+}
+
+.modal-btn:hover,
+.modal-btn.sair:hover,
+.modal-btn.config:hover {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.fechar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.bi-gear,
+.bi-door-open {
+    padding-right: 20px;
+}
+
+.user {
+    display: flex;
+    padding-top: 30vh;
+    flex-direction: column;
+    text-align: center;
+}
+
+.user__search-input {
+    border: 1px solid black;
+    border-radius: 14px;
+    padding: 10px;
+    width: 450px;
+    margin-bottom: 30px;
+}
+
+.janela-modal-config {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: left;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+}
+
+.janela-modal-config.abrir {
+    display: flex;
+}
+
+.modal-config {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 580px;
+    min-width: 1240px;
+    width: 20vw;
+    position: absolute;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.icones-conf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    
+}
+
+.icone-conf-item.ativo::after {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.icone-conf-item {
+    position: relative;
+    font-size: 45px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100px;
+    text-align: center;
+}
+
+.icone-conf-item::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+#gear::after{
+    margin-left: -10px; /* ajuste fino */
+}
+
+.icone-conf-item:hover::after {
+    width: 100%;
+}
+
+.opcao {
+    display: none;
+    border: 1px solid #ccc;
+    border-radius: 6px; 
+    padding: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    gap: 10px;
+}
+
+.opcao .bi {
+    padding-right: 30px;
+}
+
+.opcao.ativo {
+    display: block;
+}
+
+.modal-btn.config {
+    font-size: 16px;
+    font-weight: 400;
+    width: 568px;
+}
+
+.modal-btn.config:hover, .modal-btn.sair:hover, 
+.modal-btn.config:hover .bi, .modal-btn.sair:hover .bi{
+    color: white;
+}
+
+.trilho {
+    background-color: rgb(160, 160, 160);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    height: 30px;
+    width: 60px;
+}
+
+.indicador {
+    background-color: rgb(0, 0, 0);
+    border-radius: 50px;
+    height: 20px;
+    width: 20px;
+    left: -5px;
+    position: absolute;
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+.trilho.vai .indicador {
+    background-color: white;
+    left: 25px;
+}
+
+.modo-escuro {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.modo-escuro-texto {
+    margin-right: 16px;
+}
+
+.user-opcoes {
+    display: flex;
+    justify-content: center;
+    font-weight: 450;
+    margin-top: 30px;
+    gap: 60px;
+    z-index: 1;
+}
+
+.user-opcoes-item {
+    position: relative;
+    font-size: 16px;
+    display: flex;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+}
+
+
+
+.user-opcoes-item::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+.user-opcoes-item:hover::after {
+    width: 100%;
+    align-items: center;
+}
+
+.user-opcoes-item.ativo::after {
+    width: 100%;
+}
+
+.modal-btn-opcoes {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    width: 570px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px 15px;
+    height: 45px;
+    border-radius: 12px;
+    transition: background-color 0.3s;
+}
+
+.modal-btn-opcoes:hover,
+.modal-btn-opcoes.sair:hover {
+    background-color: dodgerblue;
+    color: white;
+    width: 570px;
+}
+
+.item-menu:hover .texto-menu,
+.item-menu.ativo .texto-menu,
+.item-menu:hover .bi,
+.item-menu.ativo .bi {
+    color: white;
+}
+
+
+.modal-btn:hover .bi{
+    color: white;
+}
+

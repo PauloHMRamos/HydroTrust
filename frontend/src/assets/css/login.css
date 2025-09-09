@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.login {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 215vh;
+}
+
+.login__container {
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.login__side--left {
+    background-color: white;
+    padding: 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0.2;
+}
+
+.login__side--right {
+    flex: 0.8;
+    background-color: rgb(27, 119, 211);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__side--right .bi {
+    font-size: 350px;
+    color: white;
+}
+
+.login__form {
+    width: 100%;
+    height: auto;
+}
+
+.login__form-title {
+    margin: 2px 0 25px 0;
+    font-size: 36px;
+    border-bottom: 3px solid black;
+    width: 45%;
+    font-weight: 500;
+}
+
+.login__form-title-container {
+    margin-top: 30px;
+}
+
+.login__form-inner {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.login__form-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login__form-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.login__form-input {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 10px 10px 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login__form-link {
+    color: black;
+    font-size: 16px;
+    text-decoration: underline;
+    font-weight: 400;
+}
+
+.login__form-forgot {
+    margin-top: 4px;
+}
+
+.login__form-account {
+    margin-top: 12px;
+}
+
+.login__form-account-link {
+    color: rgb(27, 119, 211);
+    text-decoration: underline;
+}
+
+.login__form-account-link:hover {
+    color: rgb(27, 119, 211);
+}
+
+.login__form-button {
+    background-color: rgb(27, 119, 211);
+    border: 1px solid rgb(27, 119, 211);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px 50px;
+    margin-top: 16px;
+    transition: 0.5s;
+    width: 280px;
+}
+
+.login__form-button:hover {
+    background-color: white;
+    border: 1px solid rgb(27, 119, 211);
+    color: rgb(27, 119, 211);
+}
+
+.login__back-button {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0 0 -20px 0;
+    background: none;
+    cursor: pointer;
+    
+}
+
+.login__back-button .bi {
+    font-size: 36px;
+}
+
+.login__error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-text-fill-color: black !important;
+    color: black !important;
+    background-color: white !important;
+}
+
+.login__back-button:focus,
+.login__back-button:active{
+    outline: none;
+    box-shadow: none;
+}
